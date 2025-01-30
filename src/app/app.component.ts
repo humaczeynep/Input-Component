@@ -1,11 +1,38 @@
+// import { Component } from '@angular/core';
+
+// @Component({
+//   selector: 'app-root',
+//   templateUrl: './app.component.html',
+//   styleUrl: './app.component.css',
+//   standalone: false
+// })
+// export class AppComponent {
+//   title = 'input';
+
+//   data: string | number | null = '';
+
+//   bindData(value: string | number | null) {
+//     console.log('Girilen değer:', value);
+//     this.data = value;
+//   }
+// }
+
+
+
 import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  standalone: false,
-  styleUrl: './app.component.css'
+  styleUrls: ['./app.component.css'],
+  standalone : false
 })
 export class AppComponent {
-  title = 'input';
+  email: string = '';
+  number: number | null = null;
+  password: string = '';
+
+  bindData(value: string | number | null) {
+    console.log('Girilen değer:', value);
+  }
 }

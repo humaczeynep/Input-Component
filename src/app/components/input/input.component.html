@@ -1,0 +1,31 @@
+<!-- <div class="input-container">
+    <input
+      class="inpt"
+      [type]="type"
+      [placeholder]="placeholder"
+      [formControl]="inptControl"
+      [(ngModel)]="model"
+      (blur)="inptControl.updateValueAndValidity()"
+    />
+    <div *ngIf="showError" class="error-message">
+      {{ errorMessage }}
+    </div>
+  </div>
+   -->
+
+   <div class="input-container">
+    <input
+      class="inpt"
+      [type]="type"
+      [placeholder]="placeholder"
+      [(ngModel)]="model"
+      (ngModelChange)="inputChange($event)"
+      (blur)="sendData()"
+      [required]="required"
+    />
+    <div *ngIf="errorMessage" class="error-message">
+      {{ errorMessage }}
+    </div>
+  </div>
+  
+  
