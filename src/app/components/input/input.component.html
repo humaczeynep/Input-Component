@@ -16,16 +16,21 @@
    <div class="input-container">
     <input
       class="inpt"
-      [type]="type"
+      [type]="type === 'password' && !showPassword ? 'password' : 'text'"
       [placeholder]="placeholder"
-      [(ngModel)]="model"
+      [(ngModel)]="inputValue"
       (ngModelChange)="inputChange($event)"
       (blur)="sendData()"
       [required]="required"
     />
+    <button
+     *ngIf="type === 'password'" class="toggle-btn" (click)="togglePassword()" type="button">
+      {{ showPassword ? '👁️' : '👁️' }}
+    </button>
     <div *ngIf="errorMessage" class="error-message">
       {{ errorMessage }}
     </div>
   </div>
+  
   
   

@@ -7,8 +7,8 @@
 
 
   <div class="container">
-    <app-input placeholder="E-posta adresinizi giriniz" type="email" [(model)]="email" [required]="true" (data)="bindData($event)"></app-input>
-    <app-input placeholder="Bir sayı giriniz" type="number" [(model)]="number" [required]="false" (data)="bindData($event)"></app-input>
-    <app-input placeholder="Şifrenizi giriniz" type="password" [(model)]="password" [required]="true" (data)="bindData($event)"></app-input>
+    <app-input placeholder="E-posta adresinizi giriniz" type="email" [(inputValue)]="email" [required]="true" (data)="bindData($event)"></app-input>
+    <app-input placeholder="Bir sayı giriniz" type="number" [(inputValue)]="number" [required]="false" (data)="bindData($event)"></app-input>
+    <app-input placeholder="Şifrenizi giriniz" type="password" [(inputValue)]="password" [required]="true" (data)="bindData($event)"></app-input>
   </div>
   
