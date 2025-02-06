@@ -1,19 +1,5 @@
-<!-- <div class="input-container">
-    <input
-      class="inpt"
-      [type]="type"
-      [placeholder]="placeholder"
-      [formControl]="inptControl"
-      [(ngModel)]="model"
-      (blur)="inptControl.updateValueAndValidity()"
-    />
-    <div *ngIf="showError" class="error-message">
-      {{ errorMessage }}
-    </div>
-  </div>
-   -->
-
    <div class="input-container">
+
     <input
       class="inpt"
       [type]="type === 'password' && !showPassword ? 'password' : 'text'"
@@ -22,11 +8,15 @@
       (ngModelChange)="inputChange($event)"
       (blur)="sendData()"
       [required]="required"
+      [ngClass]="{ 'error-border': errorMessage }"
     />
-    <button
+    <span *ngIf="type === 'password'" class="password-toggle" (click)="togglePassword()">
+      <i class="fas" [ngClass]="{'fa-eye': !showPassword, 'fa-eye-slash': showPassword}"></i>
+    </span>
+    <!-- <button
      *ngIf="type === 'password'" class="toggle-btn" (click)="togglePassword()" type="button">
       {{ showPassword ? '👁️' : '👁️' }}
-    </button>
+    </button> -->
     <div *ngIf="errorMessage" class="error-message">
       {{ errorMessage }}
     </div>
